@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @media screen and (max-width: 800px) {
+
+        body {
+            font-family: monospace;
+        }
+        
+        #randomButton {
+            position: absolute;
+        }
+    }
+    </style>
+</head>
+<body>
+    <p>Joylene sagutin mona ako</p>
+    <button id="answerButton">Sagutin na kita</button>
+    <button id="randomButton">No mag wait ka muna</button>
+    <p id="responseMessage"></p>
+
+    <h3>Made with ❤️ By your love Ivan</h3>
+
+    <script>
+        const answerButton = document.getElementById('answerButton');
+        const randomButton = document.getElementById('randomButton');
+        const responseMessage = document.getElementById('responseMessage');
+
+        randomButton.addEventListener('click', () => {
+            const maxX = window.innerWidth - randomButton.offsetWidth;
+            const maxY = window.innerHeight - randomButton.offsetHeight;
+            const randomX = Math.floor(Math.random() * maxX);
+            const randomY = Math.floor(Math.random() * maxY);
+            randomButton.style.left = `${randomX}px`;
+            randomButton.style.top = `${randomY}px`;
+        });
+
+        answerButton.addEventListener('click', () => {
+            responseMessage.textContent = 'Yieee thank youuu';
+        });
+    </script>
+</body>
+</html>
